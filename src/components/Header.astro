@@ -10,7 +10,6 @@ import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 
 const { pathname } = Astro.url;
-const baseUrl = import.meta.env.BASE_URL;
 
 // Remove trailing slash from current pathname if exists
 const currentPath =
@@ -41,7 +40,7 @@ const isActive = (path: string) => {
       class="relative flex w-full items-baseline justify-between bg-background p-4 sm:items-center sm:py-6"
     >
       <a
-        href={baseUrl}
+        href="/"
         class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
       >
         {SITE.title}
@@ -70,17 +69,17 @@ const isActive = (path: string) => {
           ]}
         >
           <li class="col-span-2">
-            <a href={`${baseUrl}/posts`} class:list={{ "active-nav": isActive("/posts") }}>
+            <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
               Posts
             </a>
           </li>
           <li class="col-span-2">
-            <a href={`${baseUrl}/tags`} class:list={{ "active-nav": isActive("/tags") }}>
+            <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
               Tags
             </a>
           </li>
           <li class="col-span-2">
-            <a href={`${baseUrl}/about`} class:list={{ "active-nav": isActive("/about") }}>
+            <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
               About
             </a>
           </li>
@@ -88,7 +87,7 @@ const isActive = (path: string) => {
             SITE.showArchives && (
               <li class="col-span-2">
                 <LinkButton
-                  href={`${baseUrl}/archives`}
+                  href="/archives"
                   class:list={[
                     "focus-outline flex justify-center p-3 sm:p-1",
                     {
@@ -106,7 +105,7 @@ const isActive = (path: string) => {
           }
           <li class="col-span-1 flex items-center justify-center">
             <LinkButton
-              href={`${baseUrl}/search`}
+              href="/search"
               class:list={[
                 "focus-outline flex p-3 sm:p-1",
                 { "[&>svg]:stroke-accent": isActive("/search") },
