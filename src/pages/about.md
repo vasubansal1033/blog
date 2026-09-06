@@ -35,7 +35,7 @@ I currently work at Nutanix as an MTS-3, having previous worked at companies lik
 
 In my free time, I would be reading about a random system's internals (e.g., how Go's memory management works under the hood or Redis internals), watching GopherCon talks on Youtube, exploring database or distributed system internals and quite recently itching my curiousity about Deep Learning (LLMs, Diffusion models). Otherwise, updating my selfhosted services once in a while to be sure everything works.
 
-For more details, you can checkout <i><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">my resume here</a></i>. If you have any good opportunities related to Backend, Infra, Data Engineering or AI (still learning) suitable for me, please feel free to reach out.
+For more details, you can checkout <i><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">my resume here</a></i>. If you have any good opportunities related to Backend, Infra, Data Engineering or AI (still learning) suitable for me, use the <a href="/recruiter">recruiter page</a> for a 30-second overview and to book a meeting.
 
 ## What you'll find here
 
