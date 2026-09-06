@@ -23,7 +23,7 @@ export interface RecruiterData {
   linkedinHref: string;
   /** Public booking page. Opens in a new tab. */
   bookingUrl: string;
-  /** Phase 2 LLM proxy. Empty = hide chat widget. */
+  /** Agent POST /chat URL. Widget sends { jd, question } only. Empty = hide FAB. */
   chatProxyUrl: string;
 }
 
@@ -89,5 +89,5 @@ export const RECRUITER: RecruiterData = {
   email: "vasubansal1998@gmail.com",
   linkedinHref: "https://www.linkedin.com/in/vasub-iitk/",
   bookingUrl: "https://calendar.app.google/BXzB9rtHZ8mZFWbD9",
-  chatProxyUrl: "",
+  chatProxyUrl: "https://recruiter-agent-ygav.onrender.com/chat",
 };

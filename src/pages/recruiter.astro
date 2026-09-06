@@ -15,7 +15,7 @@ const description =
 <Layout {title} {description}>
   <Header />
   <Breadcrumb />
-  <main id="main-content" class="mx-auto w-full max-w-app px-4 pb-16">
+  <main id="main-content" class="mx-auto w-full max-w-app px-4 pb-28">
     <p class="text-xs font-semibold tracking-[0.2em] text-accent uppercase">
       A 30 second overview to help you understand me better.
     </p>
@@ -154,22 +154,19 @@ const description =
         )
       }
     </section>
-
-    {
-      RECRUITER.chatProxyUrl && (
-        <section id="recruiter-ask" class="mt-10">
-          <h2 class="text-sm font-semibold tracking-wide uppercase">
-            Ask about fit
-          </h2>
-          <div
-            class="recruiter-chat"
-            data-viz="recruiter-chat"
-            data-proxy={RECRUITER.chatProxyUrl}
-          />
-          <script is:inline src="/recruiter-chat.js" />
-        </section>
-      )
-    }
   </main>
   <Footer />
+  {
+    RECRUITER.chatProxyUrl && (
+      <>
+        <div
+          class="recruiter-chat"
+          data-viz="recruiter-chat"
+          data-proxy={RECRUITER.chatProxyUrl}
+          hidden
+        />
+        <script is:inline src="/recruiter-chat.js" />
+      </>
+    )
+  }
 </Layout>
