@@ -21,7 +21,7 @@ export interface RecruiterData {
   resumeHref: string;
   email: string;
   linkedinHref: string;
-  /** Google Calendar Appointment Schedule URL. Empty = hide iframe. */
+  /** Public booking page. Opens in a new tab. */
   bookingUrl: string;
   /** Phase 2 LLM proxy. Empty = hide chat widget. */
   chatProxyUrl: string;
@@ -29,21 +29,24 @@ export interface RecruiterData {
 
 export const RECRUITER: RecruiterData = {
   name: "Vasu Bansal",
-  headline: "MTS-3 at Nutanix · Backend & Infra · 5+ years",
+  headline: "Backend and infra. Currently, MTS-3 at Nutanix. 5+ years in.",
   location: "India",
   pitch:
-    "IIT Kanpur (B.Tech Mechanical + Aerospace). Backend and infra engineer at Nutanix (MTS-3), previously Gojek and Deloitte. I build microservices in Go, Spring Boot, and Ruby on Rails with Kafka, Postgres, and Kubernetes, and have worked control-plane migrations involving Helm, Envoy, and OIDC.",
+    "Hi, I'm Vasu. I am a backend engineer with infra experience as well. Right now that's at Nutanix. Before this I was at Gojek where I worked on a multi-tenant KYC platform with a focus on scale and reliability, and I started out at Deloitte after college.\n\nMy daily work involves working with Go, Spring Boot microservices along with Kafka, Postgres, Redis and Kubernetes. I've been leading the IAM control-plane migration work in my current role at Nutanix involving Kubernetes, Helm charts, Envoy, OIDC.\n\nIn my free time, I like to understand how various systems work. I'm also interested in AI and how LLMs work and basic Agentic AI concepts.\n\nIf you're hiring for backend, infra, data engineering, or Agentic AI related roles (I'm still learning this one), this page is a quick overview. Please refer to my resume for more details.",
   metrics: [
-    { value: "5+", label: "Years experience" },
-    { value: "IITK", label: "B.Tech, 2016–2021" },
-    { value: "MTS-3", label: "Nutanix (current)" },
-    { value: "2", label: "Prior: Gojek, Deloitte" },
+    { value: "5+", label: "Years doing this" },
+    { value: "Nutanix", label: "MTS-3, currently working" },
+    { value: "Prior", label: "Gojek and Deloitte" },
+    { value: "IIT Kanpur", label: "Mech + Aero, 2016–21" },
   ],
   skills: [
     "Go",
     "Spring Boot",
     "Ruby on Rails",
+    "Java",
+    "Python",
     "Kafka",
+    "Redis",
     "Postgres",
     "Kubernetes",
     "Helm",
@@ -55,32 +58,35 @@ export const RECRUITER: RecruiterData = {
     {
       org: "Nutanix",
       title: "MTS-3",
-      period: "Current",
+      period: "Now (2025-present)",
       summary:
-        "Backend and infra. Microservices, Kubernetes, and control-plane work.",
+        "Backend and infra. Services, Kubernetes, IAM, OIDC control-plane migration work.",
     },
     {
       org: "Gojek",
-      title: "Backend / Infra",
-      period: "Previous",
-      summary: "Backend engineering on production services.",
+      title: "Backend",
+      period: "Before Nutanix (2022-25)",
+      summary:
+        "Multi-tenant KYC platform orchestrating ML models using Actor-concurrency based framework. Typical backend, scale, ops work with Kafka, Postgres, Redis, and Kubernetes.",
     },
     {
       org: "Deloitte",
       title: "Engineer",
-      period: "Previous",
-      summary: "Earlier professional role in software engineering.",
+      period: "First job (2021-22)",
+      summary:
+        "Where I started after college, in 2021. Python automation and Java backend work.",
     },
     {
       org: "IIT Kanpur",
-      title: "B.Tech Mechanical + Aerospace",
+      title: "B.Tech, Mechanical + Aerospace",
       period: "2016–2021",
-      summary: "Dual major. Mechanical Engineering and Aerospace Engineering.",
+      summary:
+        "Not a traditional CS degree. The software interest came in my final year.",
     },
   ],
   resumeHref: "/resume.pdf",
   email: "vasubansal1998@gmail.com",
-  linkedinHref: "https://www.linkedin.com/in/vasu-bansal-673030147/",
-  bookingUrl: "",
+  linkedinHref: "https://www.linkedin.com/in/vasub-iitk/",
+  bookingUrl: "https://calendar.app.google/BXzB9rtHZ8mZFWbD9",
   chatProxyUrl: "",
 };
