@@ -1,6 +1,11 @@
 (function () {
   const initialized = new WeakSet();
-  const LANG_LABELS = { en: "English", hi: "Hindi", te: "Telugu", pa: "Punjabi" };
+  const LANG_LABELS = {
+    en: "English",
+    hi: "Hindi",
+    te: "Telugu",
+    pa: "Punjabi",
+  };
   const PAGE_SIZES = [50, 100, 200, 500];
   const PLAYGROUND_SAMPLE = [
     "India is home to many languages and cultures.",
@@ -57,7 +62,10 @@
     if (stats.page_title) return stats.page_title;
     try {
       const path = new URL(stats.url).pathname;
-      return decodeURIComponent(path.replace(/^\/wiki\//, "")).replace(/_/g, " ");
+      return decodeURIComponent(path.replace(/^\/wiki\//, "")).replace(
+        /_/g,
+        " "
+      );
     } catch (_err) {
       return stats.url;
     }
@@ -167,7 +175,10 @@
     if (!total || !Object.keys(counts).length) return "";
     const parts = Object.entries(counts)
       .sort((a, b) => b[1] - a[1])
-      .map(([lang, count]) => `${LANG_LABELS[lang] || lang} ${count.toLocaleString()}`);
+      .map(
+        ([lang, count]) =>
+          `${LANG_LABELS[lang] || lang} ${count.toLocaleString()}`
+      );
     return `${total.toLocaleString()} tokens — ${parts.join(" · ")}`;
   }
 
@@ -189,7 +200,8 @@
         const stats = (report.languages || {})[lang] || {};
         const label = LANG_LABELS[lang] || lang;
         const rankLabel = `X${sorted.length - index}`;
-        const threshold = stats.fertility_threshold ?? thresholdForLang(report, lang);
+        const threshold =
+          stats.fertility_threshold ?? thresholdForLang(report, lang);
         const pass = stats.passes_threshold;
         const statusColor = pass ? colors.pass : colors.fail;
         const statusText = pass ? "pass" : "fail";
@@ -318,7 +330,9 @@
   }
 
   function renderHighlightedTokens(text, spans, colors, container) {
-    const sorted = [...spans].sort((a, b) => a.start - b.start || a.end - b.end);
+    const sorted = [...spans].sort(
+      (a, b) => a.start - b.start || a.end - b.end
+    );
     container.replaceChildren();
 
     let cursor = 0;
@@ -326,7 +340,9 @@
       const span = sorted[index];
       if (span.end <= cursor || span.start >= text.length) continue;
       if (span.start > cursor) {
-        container.appendChild(document.createTextNode(text.slice(cursor, span.start)));
+        container.appendChild(
+          document.createTextNode(text.slice(cursor, span.start))
+        );
       }
       const effectiveStart = Math.max(span.start, cursor);
       const effectiveEnd = Math.min(span.end, text.length);
@@ -479,7 +495,8 @@
   }
 
   function createWidget(container) {
-    const dataBase = container.getAttribute("data-data-base") || "./public/data";
+    const dataBase =
+      container.getAttribute("data-data-base") || "./public/data";
     const vocabUrl = dataFileUrl(dataBase, "vocab.json");
     const reportUrl = dataFileUrl(dataBase, "report.json");
     const tokenizerUrl = dataFileUrl(dataBase, "tokenizer.json");
@@ -509,7 +526,9 @@
     const el = sel => container.querySelector(sel);
 
     function vocabLangs() {
-      return [...new Set(state.vocab.map(item => item.lang).filter(Boolean))].sort();
+      return [
+        ...new Set(state.vocab.map(item => item.lang).filter(Boolean)),
+      ].sort();
     }
 
     function sortedFilteredVocab() {
@@ -607,14 +626,18 @@
     function updatePlaygroundChips() {
       const statsOut = el('[data-out="playground-stats"]');
       const outputOut = el('[data-out="playground-output"]');
-      if (!statsOut || !outputOut || !state.s2Runtime || !window.S2Encode) return;
+      if (!statsOut || !outputOut || !state.s2Runtime || !window.S2Encode)
+        return;
 
       ensureHighlightStyles();
       const colors = getColors();
       const text = state.playgroundText;
       const spans = window.S2Encode.displaySpans(text, state.s2Runtime);
       const tokenIds = window.S2Encode.encodeIds(text, state.s2Runtime);
-      const fertilityTokens = window.S2Encode.countFertilityTokens(text, state.s2Runtime);
+      const fertilityTokens = window.S2Encode.countFertilityTokens(
+        text,
+        state.s2Runtime
+      );
       const chars = [...text].length;
       const pretokenWords = window.S2Encode.countPretokenWords(
         text,
@@ -635,11 +658,13 @@
       const content = el('[data-out="content"]');
       content.style.display = "block";
       content.innerHTML =
-        renderEvaluationSection(state.report, colors, state.reportUrl, state.tokenizerUrl) +
-        renderTokenizerPlaygroundShell(
+        renderEvaluationSection(
+          state.report,
           colors,
-          Boolean(state.s2Runtime)
+          state.reportUrl,
+          state.tokenizerUrl
         ) +
+        renderTokenizerPlaygroundShell(colors, Boolean(state.s2Runtime)) +
         renderTokenExplorerShell(
           state.vocab.length,
           colors,
@@ -739,7 +764,11 @@
       }
 
       if (action === "download-vocab-csv") {
-        downloadBlob("s2-merged-vocab.csv", vocabToCsv(state.vocab), "text/csv;charset=utf-8");
+        downloadBlob(
+          "s2-merged-vocab.csv",
+          vocabToCsv(state.vocab),
+          "text/csv;charset=utf-8"
+        );
         return;
       }
 
@@ -789,7 +818,9 @@
 
   function initAll() {
     document
-      .querySelectorAll('.viz-s2-tokenizer-scorer[data-viz="s2-tokenizer-scorer"]')
+      .querySelectorAll(
+        '.viz-s2-tokenizer-scorer[data-viz="s2-tokenizer-scorer"]'
+      )
       .forEach(mount);
   }
 
