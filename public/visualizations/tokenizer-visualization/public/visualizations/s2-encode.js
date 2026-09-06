@@ -166,7 +166,9 @@
     if (length === 0) return [];
     if (length === 1) {
       const single = units[0];
-      return Object.prototype.hasOwnProperty.call(spmScores, single) ? [single] : [single];
+      return Object.prototype.hasOwnProperty.call(spmScores, single)
+        ? [single]
+        : [single];
     }
 
     const bestCost = new Array(length + 1).fill(Number.POSITIVE_INFINITY);
@@ -179,7 +181,8 @@
       let hasScoredExtension = false;
       for (let end = start + 1; end <= length; end += 1) {
         const candidate = units.slice(start, end).join("");
-        if (!Object.prototype.hasOwnProperty.call(spmScores, candidate)) continue;
+        if (!Object.prototype.hasOwnProperty.call(spmScores, candidate))
+          continue;
         hasScoredExtension = true;
         const cost = bestCost[start] - spmScores[candidate];
         if (cost < bestCost[end]) {
@@ -305,12 +308,18 @@
     while ((match = re.exec(text)) !== null) {
       const matchStart = match.index;
       const matchEnd = match.index + match[0].length;
-      spans.push(...encodeGapSpans(text, lastEnd, matchStart, tokenToId, spmScores));
-      spans.push(...resolvePieceSpans(match[0], matchStart, tokenToId, spmScores));
+      spans.push(
+        ...encodeGapSpans(text, lastEnd, matchStart, tokenToId, spmScores)
+      );
+      spans.push(
+        ...resolvePieceSpans(match[0], matchStart, tokenToId, spmScores)
+      );
       lastEnd = matchEnd;
     }
 
-    spans.push(...encodeGapSpans(text, lastEnd, text.length, tokenToId, spmScores));
+    spans.push(
+      ...encodeGapSpans(text, lastEnd, text.length, tokenToId, spmScores)
+    );
     return spans;
   }
 
