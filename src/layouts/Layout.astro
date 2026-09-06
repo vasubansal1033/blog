@@ -167,7 +167,7 @@ const structuredData = {
           <link rel="preconnect" href={agentOrigin} />
           <script
             is:inline
-            set:html={`(function(){var u=${JSON.stringify(agentHealthUrl)};if(!u||window.__recruiterWarmup)return;window.__recruiterWarmup=true;function p(){fetch(u,{method:"GET",cache:"no-store",keepalive:true}).catch(function(){})}p();document.addEventListener("astro:page-load",p)})();`}
+            set:html={`(function(){var u=${JSON.stringify(agentHealthUrl)};if(!u||window.__recruiterWarmup)return;window.__recruiterWarmup=true;function p(){fetch(u,{method:"GET",mode:"no-cors",cache:"no-store",keepalive:true}).catch(function(){})}p();document.addEventListener("astro:page-load",p)})();`}
           />
         </>
       )
