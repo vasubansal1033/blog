@@ -1,0 +1,153 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import { SITE } from "@/config";
+import { RECRUITER } from "@/data/recruiter";
+
+const title = `Recruiter overview | ${SITE.title}`;
+const description =
+  "30-second overview of Vasu Bansal for recruiters: skills, experience, resume, and meeting booking.";
+---
+
+<Layout {title} {description}>
+  <Header />
+  <Breadcrumb />
+  <main id="main-content" class="mx-auto w-full max-w-app px-4 pb-16">
+    <p class="text-xs font-semibold tracking-[0.2em] text-accent uppercase">
+      Recruiter · 30-second dossier
+    </p>
+    <h1 class="mt-2 text-2xl font-semibold sm:text-3xl">{RECRUITER.name}</h1>
+    <p class="mt-1 text-sm sm:text-base">{RECRUITER.headline}</p>
+
+    <section
+      class="mt-6 rounded-lg border border-border bg-muted/40 p-4 sm:p-6"
+    >
+      <h2 class="text-sm font-semibold tracking-wide uppercase">Pitch</h2>
+      <p class="mt-2 leading-relaxed">{RECRUITER.pitch}</p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-sm font-semibold tracking-wide uppercase">At a glance</h2>
+      <ul class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {
+          RECRUITER.metrics.map(metric => (
+            <li class="rounded-lg border border-border px-3 py-4">
+              <p class="text-xl font-semibold text-accent">{metric.value}</p>
+              <p class="mt-1 text-sm">{metric.label}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-sm font-semibold tracking-wide uppercase">Stack</h2>
+      <ul class="mt-3 flex flex-wrap gap-2">
+        {
+          RECRUITER.skills.map(skill => (
+            <li class="rounded-full border border-border bg-muted/40 px-3 py-1 text-sm">
+              {skill}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-sm font-semibold tracking-wide uppercase">History</h2>
+      <ol class="mt-3 space-y-4">
+        {
+          RECRUITER.roles.map(role => (
+            <li class="border-s-2 border-border ps-4">
+              <p class="font-semibold">
+                {role.org}
+                <span class="font-normal text-foreground/70">
+                  {" "}
+                  · {role.period}
+                </span>
+              </p>
+              <p class="text-sm">{role.title}</p>
+              <p class="mt-1 text-sm">{role.summary}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="mt-8 flex flex-wrap gap-3">
+      {
+        RECRUITER.bookingUrl && (
+          <a
+            href={RECRUITER.bookingUrl}
+            class="rounded-lg bg-accent px-4 py-2 font-medium text-background hover:opacity-90"
+          >
+            Book a meeting
+          </a>
+        )
+      }
+      <a
+        href={RECRUITER.resumeHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-lg border border-border px-4 py-2 font-medium hover:text-accent"
+      >
+        Resume
+      </a>
+      <a
+        href={`mailto:${RECRUITER.email}`}
+        class="rounded-lg border border-border px-4 py-2 font-medium hover:text-accent"
+      >
+        Email
+      </a>
+      <a
+        href={RECRUITER.linkedinHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-lg border border-border px-4 py-2 font-medium hover:text-accent"
+      >
+        LinkedIn
+      </a>
+    </section>
+
+    <section id="book" class="mt-10">
+      <h2 class="text-sm font-semibold tracking-wide uppercase">
+        Book a meeting
+      </h2>
+      {
+        RECRUITER.bookingUrl ? (
+          <>
+            <p class="mt-2 text-sm">
+              Pick a slot. A Google Meet link is created automatically.{" "}
+              <LinkButton
+                href={RECRUITER.bookingUrl}
+                class="underline decoration-dashed underline-offset-4"
+              >
+                Open calendar
+              </LinkButton>
+            </p>
+            <iframe
+              title="Book a meeting with Vasu Bansal"
+              src={RECRUITER.bookingUrl}
+              class="mt-4 h-[640px] w-full rounded-lg border border-border bg-background"
+            />
+          </>
+        ) : (
+          <p class="mt-2 text-sm">
+            Calendar booking is not live yet. Email{" "}
+            <LinkButton
+              href={`mailto:${RECRUITER.email}`}
+              class="underline decoration-dashed underline-offset-4"
+            >
+              {RECRUITER.email}
+            </LinkButton>{" "}
+            or use LinkedIn to set up a time.
+          </p>
+        )
+      }
+    </section>
+  </main>
+  <Footer />
+</Layout>
