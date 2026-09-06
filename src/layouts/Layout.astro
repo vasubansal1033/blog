@@ -2,7 +2,19 @@
 import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
+import { RECRUITER } from "@/data/recruiter";
 import "@/styles/global.css";
+
+function recruiterHealthUrl(proxy: string): string {
+  const trimmed = proxy.replace(/\/+$/, "");
+  if (trimmed.endsWith("/chat")) return `${trimmed.slice(0, -5)}/health`;
+  return `${trimmed}/health`;
+}
+
+const agentHealthUrl = RECRUITER.chatProxyUrl
+  ? recruiterHealthUrl(RECRUITER.chatProxyUrl)
+  : "";
+const agentOrigin = agentHealthUrl ? new URL(agentHealthUrl).origin : "";
 
 export interface Props {
   title?: string;
@@ -148,6 +160,18 @@ const structuredData = {
 
     <script is:inline src={`${import.meta.env.BASE_URL}toggle-theme.js`}
     ></script>
+
+    {
+      agentOrigin && agentHealthUrl && (
+        <>
+          <link rel="preconnect" href={agentOrigin} />
+          <script
+            is:inline
+            set:html={`(function(){var u=${JSON.stringify(agentHealthUrl)};if(!u||window.__recruiterWarmup)return;window.__recruiterWarmup=true;function p(){fetch(u,{method:"GET",cache:"no-store",keepalive:true}).catch(function(){})}p();document.addEventListener("astro:page-load",p)})();`}
+          />
+        </>
+      )
+    }
   </head>
   <body>
     <slot />
