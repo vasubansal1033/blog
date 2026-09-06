@@ -15,7 +15,7 @@ Work focus: microservices, backend platforms, infra, control-plane migrations (H
 Open to: Backend, Infra, Data Engineering, or AI-adjacent roles (AI still learning)
 Location: India
 Email: vasubansal1998@gmail.com
-LinkedIn: https://www.linkedin.com/in/vasu-bansal-673030147/
+LinkedIn: https://www.linkedin.com/in/vasub-iitk/
 GitHub: https://github.com/vasubansal1033
 Resume: https://vasubansal1033.github.io/resume.pdf
 Booking: Google Calendar appointment schedule on https://vasubansal1033.github.io/recruiter/
