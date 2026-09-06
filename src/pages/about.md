@@ -6,64 +6,40 @@ title: "About"
 <div style="display: flex; justify-content: space-between; gap: 1rem;">
   <p style="margin: 0;">
   </br>
-  Hi, I'm <b>Vasu Bansal</b>, a curious (software) engineer who enjoys learning about new things. </br> In this blog, I will start sharing a bit what I am learning, building, and what I am figuring out along the way.</p>
+  Hey there, I'm <b>Vasu Bansal</b>, a curious (software) engineer who enjoys learning about new things. </br> In this blog, I will start sharing a bit about what I am learning, building, and what I am figuring out along the way. <br /> <i>Learning from the internet and presenting in my own flavour.</i></p>
   <img alt="Vasu Bansal" src="/dp.jpg" width="200em" style="border-radius: 8px;" />
 </div>
 
 <div style="display: flex; justify-content: space-between; gap: 1rem;">
   <p style="margin: 0;">
   </br>
-    Being a tech-geek, I also run a homelab (whenever I get time). The hardware consists of a Synology NAS 923+, a RaspberryPi 5 along with 2 HP T630s, which I got for cheap. Overall setup cost should be around 1 lakh INR.
+    I run a homelab (rarely getting time to look into it recently). The hardware consists of a Synology NAS 923+, a RaspberryPi 5 along with 2 HP T630s, which I got for cheap. Overall setup cost should be around 1 lakh INR.
     </br></br>
-    I use it primarily for Degooglization: For selfhosting stuff like Immich(my mobile photo backup solution), Adguard (DNS blocks spammy sites and google ads), HomeAssistant (using which I control my smart-devices like fan, lights, and a Wipro smart extension and integrated it with Alexa), Synology NAS provides me a suite of software which replaces respective Google Cloud offerings. 
+    I use it primarily for Degooglization: For selfhosting stuff like Immich(my mobile photo backup solution), Adguard (DNS blocks spammy sites and google ads), HomeAssistant (using which I control my smart-devices like fan, lights, and a Wipro smart extension and integrated it with Alexa), Synology NAS provides me a suite of software which replaces much of the Google Cloud offerings. 
     The T630s have Proxmox installed, so I use them as my Linux playgrounds.
-    Also, I store all of my data on my NAS. 
+    I store and manage most of my data on my NAS which has four 4TB hard-disks in a RAID configuration.
     </br></br>
-    And everything is basically a Tailscale node. I use the free tier, so I can connect upto 100 devices in a mesh-based VPN. So, I can access my NAS on my iPad thus making sharing of data very easy and secure.
-    Currently it's in maintainance mode though.
   </p>
 
-  <img alt="My Homelab" src="/homelab.jpg" width="350em" style="border-radius: 8px;" />
-
+  <img alt="My Homelab" src="/homelab.jpg" width="250em" style="border-radius: 8px;" />
 </div>
+
+<p>
+    And everything is a Tailscale node. I use their free tier, so I can connect upto 100 devices in a mesh-based VPN. So, I can access my NAS on my iPad thus making sharing of data very easy and secure.
+    Currently it's in maintainance mode though.
+</p>
 
 ### My background
 
 I graduated from Indian Institute of Technology, Kanpur (2016-2021) with my B.Tech. in Mechanical Engineering and a second major in Aerospace Engineering.
 
-I currently work at Nutanix as an MTS-3, having previous worked at companies like Gojek, Deloitte. My primary experience is in backend and infra with over 5+ years of experience, having worked on building microservices in Golang, Springboot, Ruby on Rails using Kafka, Postgres, Kubernetes, ELK stack, along with infrastructure experience working with Kubernetes, Helm charts, Envoy, OIDC flow in a control-plane migration.
+I currently work at Nutanix as an MTS-3, having previous worked at companies like Gojek, Deloitte. My primary experience is in backend and infra with over 5+ years of experience, having worked on building microservices in Golang, Springboot, Ruby on Rails using Kafka, Postgres, Redis, Kubernetes, ELK stack, along with infrastructure experience working with Kubernetes, Helm charts, Envoy, OIDC flow for our control-plane's IAM migration.
 
 In my free time, I would be reading about a random system's internals (e.g., how Go's memory management works under the hood or Redis internals), watching GopherCon talks on Youtube, exploring database or distributed system internals and quite recently itching my curiousity about Deep Learning (LLMs, Diffusion models). Otherwise, updating my selfhosted services once in a while to be sure everything works.
 
 For more details, you can checkout <i><a href="/resume.pdf" target="_blank" rel="noopener noreferrer">my resume here</a></i>. If you have any good opportunities related to Backend, Infra, Data Engineering or AI (still learning) suitable for me, use the <a href="/recruiter">recruiter page</a> for a 30-second overview and to book a meeting.
 
-## What you'll find here
-
-You can expect posts drawn from a mix of these themes:
-
-- System Internals
-- Developer Productivity
-- Backend Engineering
-- System Design
-- AI
-
-Also, I like to understand a topic from four angles:
-
-- the need or the problem statement at hand
-- the intuitive picture
-- the underlying math
-- my favourite: its history
-
-I find it fascinating (and maybe a little important) how often conflict and necessity have accelerated research and development. Human survival seems to motivate governments to fund research activities, without considering any positive outcomes. A few examples that have always stuck with me:
-
-- **Medicine & trauma care:** the mass production of penicillin was accelerated during World War II, fundamentally changing global healthcare; the EpiPen and other auto-injectors trace back to quickly treating soldiers for nerve-agent exposure.
-- **The internet:** DARPA built ARPANET in the Cold War for resilient military comms; Kahn and Cerf’s TCP/IP (1973) let disparate networks talk; ARPANET adopted it on Jan 1, 1983 — birth of the modern internet. high-altitude glare.
-- **Natural Language Processing (Siri & Alexa):** In the early 2000s, military commanders were overwhelmed by the massive influx of unstructured digital data, emails, and spoken communication during the wars in Iraq and Afghanistan. DARPA funded a massive project called CALO (Cognitive Assistant that Learns and Organizes) to build an AI assistant that could understand natural human language and organize data for military officers this lead to the formation of a company which was later acquired by Apple resulting in Siri.
-- **Everyday convenience:** freeze-dried food, bug spray (DEET), and the microwave oven all began as byproducts of military research.
-
-That's the lens I would like to bring to technical topics too. Not just how something works, but why it came to exist in the first place.
-
-## Why this blog exists
+## Why this blog exists?
 
 I started my professional journey in 2021. Since my initial days, I had a habit of maintaining a Google Doc in which I would add links of specific Youtube videos or different blogs on various topics which gave me an introduction to the topic or helped me understand it intuitively or gave me that `aha` moment.
 
@@ -73,6 +49,32 @@ It's been 5 years now, I have lots of topics ranging from Redis or Kafka Interna
 So, now I am starting this blog to think and write in public, build consistency, and create a useful resource for anyone on a similar journey. And at the same time connecting with like minded folks.
 
 If a post helps you in intuitively understanding a topic, understanding a system right from basics then this blog is doing its job.
+
+## What you'll find here?
+
+You can expect posts drawn from a mix of these themes:
+
+- System Internals
+- Developer Productivity
+- Backend Engineering
+- System Design
+- AI
+
+Also, I like to understand a topic from four different angles:
+
+- the need or the problem statement at hand
+- the intuitive picture
+- the underlying math
+- personal favourite: its history
+
+I find it fascinating (and maybe a little important) how often conflict and necessity have accelerated research and development. Human survival seems to motivate governments to fund research activities, without considering any positive outcomes. A few examples that have always stuck with me:
+
+- **Medicine & trauma care:** the mass production of penicillin was accelerated during World War II, fundamentally changing global healthcare; the EpiPen and other auto-injectors trace back to quickly treating soldiers for nerve-agent exposure.
+- **The internet:** DARPA built ARPANET in the Cold War for resilient military comms; Kahn and Cerf’s TCP/IP (1973) let disparate networks talk; ARPANET adopted it on Jan 1, 1983 — birth of the modern internet. high-altitude glare.
+- **Natural Language Processing (Siri & Alexa):** In the early 2000s, military commanders were overwhelmed by the massive influx of unstructured digital data, emails, and spoken communication during the wars in Iraq and Afghanistan. DARPA funded a massive project called CALO (Cognitive Assistant that Learns and Organizes) to build an AI assistant that could understand natural human language and organize data for military officers this lead to the formation of a company which was later acquired by Apple resulting in Siri.
+- **Everyday convenience:** freeze-dried food, bug spray (DEET), and the microwave oven all began as byproducts of military research.
+
+That's the lens I would like to bring to technical topics too. Not just how something works, but why it came to exist in the first place.
 
 ## Connect
 

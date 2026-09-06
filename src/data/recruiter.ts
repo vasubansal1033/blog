@@ -29,10 +29,11 @@ export interface RecruiterData {
 
 export const RECRUITER: RecruiterData = {
   name: "Vasu Bansal",
-  headline: "Backend and infra. Currently, MTS-3 at Nutanix. 5+ years in.",
+  headline:
+    "Backend/Infra. 5+ years @ Nutanix, Gojek, Deloitte, IIT Kanpur. Self-learner and curious.",
   location: "India",
   pitch:
-    "Hi, I'm Vasu. I am a backend engineer with infra experience as well. Right now that's at Nutanix. Before this I was at Gojek where I worked on a multi-tenant KYC platform with a focus on scale and reliability, and I started out at Deloitte after college.\n\nMy daily work involves working with Go, Spring Boot microservices along with Kafka, Postgres, Redis and Kubernetes. I've been leading the IAM control-plane migration work in my current role at Nutanix involving Kubernetes, Helm charts, Envoy, OIDC.\n\nIn my free time, I like to understand how various systems work. I'm also interested in AI and how LLMs work and basic Agentic AI concepts.\n\nIf you're hiring for backend, infra, data engineering, or Agentic AI related roles (I'm still learning this one), this page is a quick overview. Please refer to my resume for more details.",
+    "Hi, I'm Vasu. I am a backend engineer with infra experience as well. Right now that's at Nutanix. Before this I was at Gojek where I worked on a multi-tenant KYC platform with a focus on scale and reliability, and I started out at Deloitte straight after college.\n\nMy daily work involves working with Go, Spring Boot microservices along with Kafka, Postgres, Redis and Kubernetes. I've been leading the IAM control-plane migration work in my current role at Nutanix involving Kubernetes, Helm charts, Envoy, OIDC.\n\nIn my free time, I like to understand how various systems work. I'm also interested in AI and how LLMs work and basic Agentic AI concepts.\n\nIf you're hiring for backend, infra, data engineering, or Agentic AI related roles (I'm still learning this one), this page is a quick overview. Please refer to my resume for more details.",
   metrics: [
     { value: "5+", label: "Years doing this" },
     { value: "Nutanix", label: "MTS-3, currently working" },
